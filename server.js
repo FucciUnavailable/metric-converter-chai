@@ -7,7 +7,6 @@ const cors        = require('cors');
 require('dotenv').config();
 
 const apiRoutes         = require('./routes/api.js');
-const fccTestingRoutes  = require('./routes/fcctesting.js');
 const runner            = require('./test-runner');
 
 let app = express();
@@ -25,8 +24,7 @@ app.route('/')
     res.sendFile(process.cwd() + '/views/index.html');
   });
 
-//For FCC testing purposes
-fccTestingRoutes(app);
+
 
 //Routing for API 
 apiRoutes(app);  
